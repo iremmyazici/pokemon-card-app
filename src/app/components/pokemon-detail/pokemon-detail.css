@@ -1,0 +1,19 @@
+.detail-page {
+  padding: 32px;
+  text-align: center;
+}
+
+.detail-page img {
+  width: 200px;
+  height: 200px;
+}
+
+.detail-page a {
+  display: block;
+  margin-bottom: 16px;
+}
+
+.loading {
+  padding: 32px;
+  text-align: center;
+}

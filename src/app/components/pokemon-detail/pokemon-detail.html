@@ -1,0 +1,14 @@
+@if (!isLoading && pokemon) {
+  <div class="detail-page">
+    <a routerLink="/">← go back to the list</a>
+    <img [src]="pokemon.image" [alt]="pokemon.name" />
+    <h1>{{ pokemon.name }}</h1>
+    <p>ID: #{{ pokemon.id }}</p>
+  </div>
+
+} @else if(isLoading){
+  <div class="loading">
+    <a routerLink="/">← go back to the list</a>
+    Loading..
+  </div>
+}

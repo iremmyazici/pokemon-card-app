@@ -1,0 +1,548 @@
+
+https://github.com/iremmyazici böyle bir github hesabım var localde yaptığım şeyleri buraya pushlamak istiyorum insanlara göstermek için 
+
+12s boyunca düşündüm
+Tabii, localde yaptığın projeleri GitHub hesabına pushlayıp portfolyo gibi gösterebilirsin. En temel akış şu:
+
+1. GitHub’da yeni repository oluştur
+GitHub hesabında:
+
+Repositories → New
+
+Sonra:
+
+Repository name: örnek my-angular-project
+
+Public seçersen herkes görebilir
+
+README ekleyebilirsin ama local projeyi pushlarken bazen conflict çıkarabilir. İlk kez yapıyorsan boş repo oluşturmak daha kolay.
+
+Repo oluşturunca sana şöyle bir URL verecek:
+
+https://github.com/iremmyazici/my-angular-project.git
+veya SSH kullanıyorsan:
+
+git@github.com:iremmyazici/my-angular-project.git
+2. Local proje klasörüne gir
+Terminalde projenin olduğu klasöre git:
+
+cd path/to/your/project
+Örneğin:
+
+cd Desktop/my-angular-project
+3. Git başlat
+Projede daha önce git yoksa:
+
+git init
+Sonra dosyaları ekle:
+
+git add .
+Commit oluştur:
+
+git commit -m "Initial commit"
+4. GitHub reposunu bağla
+GitHub’daki repo URL’ini remote olarak ekle:
+
+git remote add origin https://github.com/iremmyazici/my-angular-project.git
+Sonra branch adını main yap:
+
+git branch -M main
+Pushla:
+
+git push -u origin main
+Bu kadar. Sonra GitHub sayfasına girince kodların görünecek.
+
+Sonraki değişiklikleri pushlamak için
+Projede değişiklik yaptığında her seferinde sadece şu üçlü yeterli:
+
+git add .
+git commit -m "Update project"
+git push
+Önemli: .gitignore ekle
+Özellikle Angular/Node projelerinde node_modules GitHub’a atılmaz. Proje kökünde .gitignore dosyası olmalı.
+
+Angular için genelde şunlar olmalı:
+
+node_modules/
+dist/
+.angular/
+.env
+.DS_Store
+Eğer .env içinde API key, Supabase key, token, şifre gibi şeyler varsa asla GitHub’a koyma.
+
+Güzel görünmesi için README ekle
+İnsanlara göstermek için repo içinde README.md çok önemli. Mesela:
+
+# Project Name
+
+Short description of the project.
+
+## Technologies Used
+
+- Angular
+- TypeScript
+- HTML
+- CSS
+- Supabase
+
+## Features
+
+- User authentication
+- Product scan
+- API integration
+- Responsive design
+
+## How to Run
+
+```bash
+npm install
+npm start
+
+Bu repo portfolyo gibi duracaksa screenshot da ekleyebilirsin.
+
+---
+
+En pratik haliyle sıfırdan komutlar:
+
+```bash
+cd your-project-folder
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/iremmyazici/REPO_NAME.git
+git push -u origin main
+
+8b1e4b66-ebb2-4116-ac29-a401f33e2bf3.png
+bunları ne seçeyim yardımcı olur musn 
+
+10s boyunca düşündüm
+Evet, şu an doğru yerdesin. Bu proje localde zaten varsa ve GitHub’a pushlamak istiyorsan şöyle seç:
+
+Repository name:
+pokemoncard olabilir ama daha düzgün görünmesi için bence şunlardan biri daha iyi:
+
+pokemon-card-app
+veya
+
+pokemon-cards
+GitHub’da proje isimleri genelde küçük harf ve tire ile yazılır. pokemoncard da olur ama pokemon-card-app daha profesyonel durur.
+
+Description:
+Şunu yazabilirsin:
+
+A Pokémon card web application built with Angular and TypeScript.
+React ise:
+
+A Pokémon card web application built with React and JavaScript.
+Visibility:
+İnsanlara göstermek istiyorsan Public seçili kalsın.
+
+Start with a template:
+No template kalsın.
+
+Add README:
+Localde kendi projen varsa bence Off kalsın. Sonra README’yi localden ekleyip pushlarız. GitHub’da şimdi açarsan bazen ilk pushta conflict çıkarabiliyor.
+
+Add .gitignore:
+Burada önemli. Projen Angular/React/Node projesiyse Node seçebilirsin.
+Ama local projenin içinde zaten .gitignore varsa No .gitignore bırak.
+
+Choose a license:
+Şimdilik No license bırakabilirsin.
+
+Yani senin durumda ideal seçim:
+
+Repository name: pokemon-card-app
+Description: A Pokémon card web application built with Angular and TypeScript.
+Visibility: Public
+Template: No template
+README: Off
+.gitignore: Node veya No .gitignore
+License: No license
+Eğer local projen Angular ise ve içinde .gitignore yoksa Add .gitignore → Node seç.
+Eğer proje zaten Angular CLI ile oluşturulduysa büyük ihtimalle .gitignore zaten vardır, o zaman No .gitignore bırak.
+
+Sonra Create repository butonuna bas. Repository oluşunca bana çıkan komutları veya ekranı at, sana localden push komutlarını birebir yazayım.
+
+
+
+Localde kendi projen varsa bence **Off** kalsın. Sonra README’yi localden ekleyip pushlarız. GitHub’da şimdi açarsan bazen ilk pushta conflict çıkarabiliyor.
+
+readme ye foto eklenebiliyo mu bir de çalınmasını istemşiyorum ama basic bir şey zateb 
+
+Bir saniye düşündüm
+Evet, README’ye fotoğraf/screenshot eklenebiliyor. Hatta portfolyo için çok iyi olur.
+
+Mesela projeye şöyle bir klasör koyarsın:
+
+assets/
+  screenshot-home.png
+  screenshot-detail.png
+Sonra README.md içine şöyle eklersin:
+
+## Screenshots
+
+![Home Page](assets/screenshot-home.png)
+
+![Detail Page](assets/screenshot-detail.png)
+GitHub’da direkt görünür.
+
+Çalınmasını istemiyorsan birkaç şeyi bilmen lazım:
+
+Public repo yaparsan kod herkes tarafından görülebilir.
+Yani biri teorik olarak kodu kopyalayabilir. Basic bir proje olsa bile tamamen engellemek mümkün değil.
+
+Ama portfolyo için paylaşmak istiyorsan en mantıklı yol şu:
+
+API key, token, şifre, .env dosyası koyma
+
+.gitignore içinde bunlar olsun:
+
+node_modules/
+dist/
+.env
+.DS_Store
+Çok özel algoritma / business logic varsa koyma veya sadeleştir
+
+README’de “Portfolio project” gibi belirt
+
+License ekleme veya daha kontrollü bir license kullan
+
+License konusunda:
+
+No license bırakırsan teknik olarak insanlar kodunu özgürce kullanma hakkı kazanmış olmaz. Ama repo public olduğu için yine görebilirler ve kopyalamaya çalışan olabilir.
+
+Daha net yazmak istersen README’ye şunu ekleyebilirsin:
+
+## Usage
+
+This project is shared for portfolio and educational purposes only.  
+Unauthorized commercial use or redistribution is not permitted.
+Ama bu yine de “teknik koruma” değil, daha çok uyarı.
+
+Benim önerim:
+
+Projeyi insanlara göstermek istiyorsan:
+
+Public yap
+README ekle
+Screenshot koy
+.env / API key koyma
+No license bırak
+Eğer “kodumu kimse görmesin ama linkte proje görünsün” diyorsan, repo Private kalmalı; projeyi Vercel/Netlify gibi yerde deploy edip sadece çalışan site linkini paylaşırsın. GitHub kodu görünmez.
+
+
+api response kullandığım sistemi vs vermem lazım mı 
+
+Bir saniye düşündüm
+Hayır, API response’un tamamını veya sistemi detaylı şekilde vermek zorunda değilsin. Portfolyo için genelde şu kadarı yeterli:
+
+README’de yazılabilir:
+
+## API
+
+This project uses an external Pokémon API to fetch Pokémon/card data.
+The API response is processed on the frontend and displayed with a responsive UI.
+veya biraz daha net:
+
+## Data Source
+
+The application fetches Pokémon data from a public API and displays the results in card format.
+Ama şunları koyma:
+
+API key
+secret key
+.env dosyası
+backend endpointin gizli adresi
+token
+private Supabase URL/key
+çok detaylı response JSON’ları
+kendi özel filtreleme/algoritma mantığın
+Eğer kullandığın API public ise, mesela PokeAPI gibi, README’de link vermen normal:
+
+Data is fetched from PokeAPI.
+Ama kendi geliştirdiğin özel sistemse veya Dexify gibi fikir çalınmasını istemediğin bir yapıysa çok genel yaz:
+
+The app integrates with an external API to retrieve and display product-related data.
+Yani özetle:
+
+Göstermen iyi olan şeyler:
+
+Kullandığın teknolojiler
+Projenin ne yaptığı
+Ekran görüntüleri
+Nasıl çalıştırılır
+Genel API kullanımı
+Göstermemen gerekenler:
+
+API response detayları
+API key
+.env
+özel endpointler
+özel business logic
+çok detaylı sistem akışı
+Senin Pokémon card projesi basic ise README’de sadece şöyle yazman yeterli:
+
+This application fetches Pokémon data from an external API and displays it in a card-based interface.
+Bu hem profesyonel durur hem de gereksiz detay vermez.
+
+
+
+angular123 2.zip
+Zip Arşivi
+böyle bir proje zaten 
+
+1m 32s boyunca düşündüm
+Evet, baktım: bu proje portfolyo için GitHub’a koyulabilir, çünkü basic/öğrenme amaçlı bir Angular Pokémon app’i gibi duruyor.
+
+Ama şu haliyle direkt zip içeriğini komple pushlama. İçinde GitHub’a gitmemesi gereken şeyler var:
+
+node_modules/
+.angular/
+.git/
+.DS_Store
+__MACOSX/
+src.zip
+Bunları GitHub’a koyma. Özellikle node_modules çok büyük ve gereksiz. .git de local git geçmişin; yeni repo için gerek yok.
+
+Bu projede README’de ne yazabilirsin?
+API response detaylarını vermene gerek yok. Şöyle genel yazman yeterli:
+
+# Pokémon Card App
+
+A simple Angular application that fetches Pokémon data from a public API and displays it in a card-based interface.
+
+## Features
+
+- Pokémon card list
+- Pagination
+- Detail page for each Pokémon
+- Angular Signals for reactive state updates
+- Basic caching for fetched pages
+- Routing between list and detail pages
+
+## Technologies Used
+
+- Angular
+- TypeScript
+- RxJS
+- Angular Router
+- PokeAPI
+
+## API
+
+This project uses the public PokeAPI to fetch Pokémon data.
+
+Only the required fields are used in the UI:
+
+- Pokémon ID
+- Pokémon name
+- Pokémon image
+
+## How to Run
+
+```bash
+npm install
+npm start
+Then open:
+
+http://localhost:4200
+Usage
+This project is shared for portfolio and educational purposes only.
+Unauthorized commercial use or redistribution is not permitted.
+
+
+README’ye screenshot da ekleyebilirsin. Mesela:
+
+```md
+## Screenshots
+
+![Pokémon List](assets/screenshots/pokemon-list.png)
+
+![Pokémon Detail](assets/screenshots/pokemon-detail.png)
+GitHub’da repo oluştururken seçimlerin
+Bu proje için şunları seç:
+
+Repository name: pokemon-card-app
+Description: Angular Pokémon card application using PokeAPI, routing, pagination and signals.
+Visibility: Public
+Template: No template
+Add README: Off
+Add .gitignore: No .gitignore
+License: No license
+Çünkü projende zaten .gitignore var.
+
+Localde pushlamadan önce temizlemen gerekenler
+Proje klasörünün içine girip şunları sil:
+
+rm -rf node_modules
+rm -rf .angular
+rm -rf .git
+rm -rf __MACOSX
+rm -f .DS_Store
+rm -f src/.DS_Store
+rm -f src/app/.DS_Store
+rm -f src.zip
+Sonra .gitignore içinde bunlar olduğundan emin ol:
+
+node_modules/
+.angular/
+dist/
+.env
+.DS_Store
+Sonra GitHub’a push
+Repo’yu GitHub’da oluşturduktan sonra terminalde proje klasöründe:
+
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/iremmyazici/pokemon-card-app.git
+git push -u origin main
+Bu proje için API detayını saklamana gerek yok çünkü PokeAPI public. Ama yine de README’de tüm response JSON’unu koyma; sadece “PokeAPI’den Pokémon id, name, image alıyorum” demen yeterli.
+
+
+# Node modules
+/node_modules
+
+# Build output
+/dist
+/out-tsc
+
+# Angular cache
+/.angular/cache
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs & editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files (VERY IMPORTANT)
+.env
+.env.*
+!environment.ts
+!environment.prod.ts
+
+# Angular environments (optional - depends on team)
+/src/environments/*.local.ts
+
+# Coverage
+/coverage
+
+# Temporary files
+.tmp
+.temp
+
+# Lock files (optional - depends on team policy)
+# package-lock.json
+# yarn.lock
+
+# Firebase (if used)
+.firebase/
+
+# Misc
+*.log
+*.cache
+
+gitignore böyle
+
+Birkaç saniye düşündüm
+Evet, bu .gitignore gayet iyi. GitHub’a koymak için güvenli görünüyor.
+
+Sadece birkaç küçük düzeltme/öneri yapardım:
+
+1. .angular/cache yerine komple .angular ignore edebilirsin
+Şu an sadece cache’i ignore etmişsin:
+
+/.angular/cache
+Bunu şöyle yapmak daha temiz:
+
+/.angular
+Çünkü .angular klasörü genel olarak local/cache amaçlıdır, GitHub’a gerek yok.
+
+2. package-lock.json ignore edilmesin
+Şu satırlar yorumda kalmış, iyi:
+
+# package-lock.json
+# yarn.lock
+Bunları açma. Yani böyle kalsın.
+
+Çünkü package-lock.json projeyi başkası indirince aynı dependency versiyonlarıyla çalıştırmasına yardım eder. Portfolio projelerinde GitHub’a koymak normaldir.
+
+3. Environment kısmı doğru
+Şu kısım iyi:
+
+.env
+.env.*
+Bu, API key/token gibi gizli şeyleri engeller.
+
+Ama şu iki satır biraz gereksiz:
+
+!environment.ts
+!environment.prod.ts
+Çünkü sen zaten environment.ts dosyalarını ignore etmiyorsun. Zararlı değil ama şart değil.
+
+Angular’da genelde src/environments/environment.ts ve environment.prod.ts içinde gizli key yoksa GitHub’a koyulabilir. Ama içine private API key yazdıysan koyma.
+
+Bence son hali şöyle olsun:
+
+# Node modules
+/node_modules
+
+# Build output
+/dist
+/out-tsc
+
+# Angular cache
+/.angular
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs & editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.*
+
+# Angular local environments
+/src/environments/*.local.ts
+
+# Coverage
+/coverage
+
+# Temporary files
+.tmp
+.temp
+
+# Firebase
+.firebase/
+
+# Misc
+*.log
+*.cache

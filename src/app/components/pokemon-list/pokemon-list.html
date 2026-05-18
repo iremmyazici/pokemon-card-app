@@ -1,0 +1,28 @@
+<div class="pokemon-list-container">
+  <div class="grid">
+    @for (pokemon of pokemons(); track pokemon.id) {
+      <app-pokemon-card
+        [pokemon]="pokemon"
+        [qualcosa]="pokemon.id">
+      </app-pokemon-card>
+    }
+  </div>
+
+  <div class="pagination">
+    <button (click)="prevPageGroup()" [disabled]="currentGroupStart === 1">
+      Previous
+    </button>
+
+    @for (page of visiblePages; track page) {
+      <button
+        (click)="loadPage(page)"
+        [class.active]="page === currentPage()">
+        {{ page }}
+      </button>
+    }
+
+    <button (click)="nextPageGroup()">
+      Next
+    </button>
+  </div>
+</div>
