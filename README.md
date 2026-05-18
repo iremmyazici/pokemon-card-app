@@ -1,59 +1,93 @@
-# MyApp
+# Pokémon Card App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.2.
+A simple Pokémon card web application built with Angular and TypeScript.
 
-## Development server
+## About
 
-To start a local development server, run:
+This project fetches Pokémon data from a public API and displays it in a card-based interface.
+
+It was created as a portfolio project to practice Angular components, routing, services, TypeScript models, and API integration.
+
+## Features
+
+- Pokémon card list
+- Pokémon detail page
+- Routing between pages
+- API data fetching
+- Component-based structure
+- Basic responsive UI
+
+## Technologies
+
+- Angular
+- TypeScript
+- HTML
+- CSS
+- Angular Router
+- PokeAPI
+
+## How to Run
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/iremmyazici/pokemon-card-app.git
+```
+
+### 2. Open the project folder
+
+```bash
+cd pokemon-card-app
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the project
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Then open:
 
 ```bash
-ng generate component component-name
+http://localhost:4200/
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Useful Commands
 
 ```bash
-ng generate --help
+ng serve
 ```
 
-## Building
-
-To build the project run:
+Runs the project locally.
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Builds the project into the `dist/` folder.
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+Runs unit tests.
 
-For end-to-end (e2e) testing, run:
+## Security
 
-```bash
-ng e2e
-```
+No API keys, passwords, tokens, or private environment files are included in this project.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Purpose
 
-## Additional Resources
+This project is shared for portfolio and educational purposes.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Unauthorized commercial use, redistribution, or claiming this project as your own work is not permitted.
+
+## Author
+
+Created by [iremmyazici](https://github.com/iremmyazici).
